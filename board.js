@@ -1,3 +1,5 @@
+//Tetris Board logic and rendering
+
 class Board { 
     constructor(canvasContext){
         this.canvasContext = canvasContext;
