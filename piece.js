@@ -4,19 +4,16 @@ class Piece {
         //The DOM 2d canvas element on which to draw on
         this.canvasContext = canvasContext;
 
-        //The shape of the piece
-        this.shape = [
-            [3, 0, 0],
-            [3, 3, 3],
-            [0, 0, 0]
-        ];
+        //The shape and color of the piece
+        const tetroTypeNumber = this.getRandomTetronimoNumber();
+        this.shape = SHAPES[tetroTypeNumber];
+        this.color = COLORS[tetroTypeNumber];
 
         //The current position of the piece
         this.x = 4;
         this.y = 0;
 
-        //The color of the object 
-        this.color = 'blue'
+
     }
 
     draw() {
@@ -31,5 +28,10 @@ class Piece {
 
     move(p) {
         [this.x, this.y] = [p.x, p.y];
+        this.shape = p.shape;
+    }
+
+    getRandomTetronimoNumber(){
+        return Math.floor(Math.random()*COLORS.length);
     }
 }
