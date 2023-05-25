@@ -1,6 +1,10 @@
 const COLS = 10;
 const ROWS = 20;
 const BLOCK_SIZE = 30;
+const LINES_PER_LEVEL = 4;
+const DEF_DROP_INTERVAL = 1000;
+const NUMBER_OF_HIGH_SCORES = 10;
+const HIGH_SCORES = "highscores"
 const KEY = {
   LEFT: 37,
   UP: 38,
@@ -55,3 +59,14 @@ const SHAPES = [
 ];
 
 Object.freeze(KEY);
+
+const POINTS = {
+  SINGLE_LINE: 100, 
+  DOUBLE_LINE: 300, 
+  TRIPLE_LINE: 400,
+  TETRIS: 700, 
+  SOFT_DROP: 1, 
+  HARD_DROP: 2
+};
+
+Object.freeze(POINTS);

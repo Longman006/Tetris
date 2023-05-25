@@ -9,8 +9,8 @@ class Piece {
         this.shape = SHAPES[tetroTypeNumber];
         this.color = COLORS[tetroTypeNumber];
 
-        //The current position of the piece
-        this.x = 4;
+        //The current position of the piece, always starts at the top
+        this.x = 0;
         this.y = 0;
 
 
@@ -20,8 +20,10 @@ class Piece {
         this.canvasContext.fillStyle = this.color;
         this.shape.forEach((row, y) => {
             row.forEach((column, x) => {
-                if (column > 0)
+                if (column > 0){
                     this.canvasContext.fillRect(this.x + x, this.y + y, 1, 1);
+            }
+
             });
         });
     }
